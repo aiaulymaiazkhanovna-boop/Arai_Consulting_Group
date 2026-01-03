@@ -2,15 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arai Consulting | Арест шешу</title>
+    <title>Arai Consulting | Заңгерлік Көмек</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --gold: #D4AF37;
-            --black: #0a0a0a;
-            --card-bg: #161616;
+            --black: #0d0d0d;
+            --card-bg: rgba(22, 22, 22, 0.9);
             --white: #ffffff;
         }
 
@@ -23,49 +23,53 @@
             overflow-x: hidden;
         }
 
-        /* БАННЕРДІ (ФОНДЫ) ТӨМЕН ТҮСІРУ */
-        .header-section {
+        /* БАННЕРДІ (ФОНДЫ) РЕТТЕУ */
+        .hero {
             width: 100%;
-            /* Жоғарғы бос орынды (padding-top) көбейттік, баннер төмен түсті */
-            padding: 80px 20px 40px 20px; 
-            text-align: center;
-            background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%);
-            border-bottom: 1px solid #222;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* Мазмұнды төменге ығыстыру */
+            padding-bottom: 30px;
+            background-image: linear-gradient(to bottom, rgba(13,13,13,0.5), var(--black)), 
+                              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000');
+            /* background-position: center 20% - фонды төмен түсіреді */
+            background-position: center 25%;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         /* ЛОГОТИП СТИЛІ */
-        .logo-container {
-            display: inline-block;
-            width: 180px;
-            height: 180px;
-            margin-bottom: 25px;
-            position: relative;
+        .logo-box {
+            width: 200px; /* Логотиптің өлшемін үлкейттік */
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
         }
 
-        .main-logo {
+        .logo-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Фото созылып кетпеуі үшін */
-            border-radius: 50%;
-            border: 4px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            height: auto;
+            display: block;
         }
 
-        .glitter-text {
+        .main-title {
             font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 800;
             background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .subtitle {
+        .tagline {
             color: var(--gold);
-            font-size: 0.9rem;
-            margin-top: 10px;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
             font-weight: 600;
+            margin-top: 5px;
+            letter-spacing: 3px;
         }
 
         /* ПРАЙС БӨЛІМІ */
@@ -73,54 +77,50 @@
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            padding: 20px 15px;
+            padding: 10px 15px 40px 15px;
         }
 
-        .price-card {
+        .price-item {
             background: var(--card-bg);
-            margin-bottom: 12px;
-            padding: 18px;
-            border-radius: 15px;
+            margin-bottom: 10px;
+            padding: 18px 20px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px solid #222;
-            transition: 0.3s;
+            backdrop-filter: blur(5px);
         }
 
-        .price-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        .service-info { display: flex; align-items: center; gap: 12px; }
-        .service-info i { color: var(--gold); font-size: 1.2rem; }
-        .service-name { font-size: 1rem; color: #ddd; }
-        .service-price { color: var(--gold); font-weight: 700; }
+        .service { display: flex; align-items: center; gap: 12px; }
+        .service i { color: var(--gold); font-size: 1.1rem; width: 20px; text-align: center; }
+        .name { font-size: 0.95rem; color: #efefef; }
+        .price { color: var(--gold); font-weight: 700; font-size: 1rem; }
 
         /* БАТЫРМАЛАР */
-        .btns-group {
+        .contact-group {
             display: grid;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
         .btn {
-            padding: 18px;
-            border-radius: 15px;
+            padding: 16px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            transition: 0.3s;
         }
 
         .btn-wa { background: #25D366; color: white; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
 
-        /* WHATSAPP FLOAT */
-        .wa-float {
+        /* FLOAT BUTTON */
+        .float-wa {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -133,40 +133,41 @@
             justify-content: center;
             font-size: 30px;
             color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
 
-    <header class="header-section">
-        <div class="logo-container">
-            <img src="logo.png" alt="Arai Consulting" class="main-logo" onerror="this.src='https://i.ibb.co/Xz9kH0h/image.png'">
+    <div class="hero">
+        <div class="logo-box">
+            <img src="logo.png" alt="Arai Consulting" class="logo-img" onerror="this.src='https://i.ibb.co/Xz9kH0h/image.png'">
         </div>
-        <h1 class="glitter-text">Arai Consulting</h1>
-        <p class="subtitle">МЕН АРЕСТТЕРДІ ШЕШЕМІН</p>
-    </header>
+        <h1 class="main-title">Arai Consulting</h1>
+        <p class="tagline">I WILL LIFT BANK ARRESTS</p>
+    </div>
 
     <div class="container">
         <div class="price-list">
-            <div class="price-card"><div class="service-info"><i class="fas fa-file-invoice"></i><span class="service-name">Нотариальный</span></div><span class="service-price">5 000 ₸</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-gavel"></i><span class="service-name">Сот</span></div><span class="service-price">15 000 ₸</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-university"></i><span class="service-name">Банкроттыққа</span></div><span class="service-price">20 000 ₸+</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-bolt"></i><span class="service-name">Ускоренный</span></div><span class="service-price">10 000 ₸+</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-laptop"></i><span class="service-name">Егов</span></div><span class="service-price">1 000 ₸+</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-car-crash"></i><span class="service-name">Страховка</span></div><span class="service-price">10%</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-chart-line"></i><span class="service-name">Рейтинг көтеру</span></div><span class="service-price">20 000 ₸</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-baby"></i><span class="service-name">Алимент</span></div><span class="service-price">10 000 ₸</span></div>
-            <div class="price-card"><div class="service-info"><i class="fas fa-user-shield"></i><span class="service-name">Жұмыссыздық</span></div><span class="service-price">7 000 ₸</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-file-invoice"></i><span class="name">Нотариальный</span></div><span class="price">5 000 ₸</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-gavel"></i><span class="name">Сот</span></div><span class="price">15 000 ₸</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-university"></i><span class="name">Банкроттыққа</span></div><span class="price">20 000 ₸+</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-bolt"></i><span class="name">Ускоренный</span></div><span class="price">10 000 ₸+</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-laptop"></i><span class="name">Егов</span></div><span class="price">1 000 ₸+</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-car-crash"></i><span class="name">Страховка</span></div><span class="price">10%</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-chart-line"></i><span class="name">Рейтинг көтеру</span></div><span class="price">20 000 ₸</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-baby"></i><span class="name">Алимент</span></div><span class="price">10 000 ₸</span></div>
+            <div class="price-item"><div class="service"><i class="fas fa-user-shield"></i><span class="name">Жұмыссыздық</span></div><span class="price">7 000 ₸</span></div>
         </div>
 
-        <div class="btns-group">
+        <div class="contact-group">
             <a href="https://wa.me/77716574345" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp-қа жазу</a>
             <a href="https://www.instagram.com/arai_aueskhanovna?igsh=dzVnenAwZDA1ZHRt" target="_blank" class="btn btn-insta"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </div>
 
-    <a href="https://wa.me/77716574345" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/77716574345" class="float-wa"><i class="fab fa-whatsapp"></i></a>
 
 </body>
 </html>
