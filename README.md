@@ -128,7 +128,7 @@
 <body>
 
     <section class="hero">
-        <img src="https://i.ibb.co/Xz9kH0h/image.png" alt="Arai Logo" class="main-logo">
+        <img src="11.jpeg" alt="Arai Logo" class="main-logo">
         <h1 class="glitter-text">ARAI AUESKHANOVNA</h1>
         <p style="color: #aaa; margin-top: 5px;">Тәжірибелі заңгер көмегі</p>
     </section>
