@@ -145,7 +145,7 @@
 
     <header class="header-section">
         <div class="logo-container">
-            <img src="11.jpeg" alt="Arai Consulting" class="main-logo" onerror="this.src='https://i.ibb.co/Xz9kH0h/image.png'">
+            <img src="11.jpeg" alt="Arai Consulting" class="main-logo" onerror="11.jpeg">
         </div>
         <h1 class="glitter-text">Arai Consulting</h1>
         <p class="subtitle">МЕН АРЕСТТЕРДІ ШЕШЕМІН</p>
