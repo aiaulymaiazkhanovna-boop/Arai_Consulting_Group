@@ -19,66 +19,68 @@
         body {
             background-color: var(--black);
             color: var(--white);
-            font-family: 'Inter', -apple-system, sans-serif;
-            overflow-x: hidden; /* Телефонда шетке шығып кетпеу үшін */
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* Header Section - Логотипті төмен түсіру */
+        /* БАННЕРДІ (ФОНДЫ) ТӨМЕН ТҮСІРУ */
         .header-section {
             width: 100%;
-            padding: 60px 20px 30px 20px; /* Жоғарғы жағын 60px-ке дейін арттырдық */
+            /* Жоғарғы бос орынды (padding-top) көбейттік, баннер төмен түсті */
+            padding: 80px 20px 40px 20px; 
             text-align: center;
             background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%);
+            border-bottom: 1px solid #222;
         }
 
+        /* ЛОГОТИП СТИЛІ */
         .logo-container {
             display: inline-block;
-            width: 160px; /* Телефонға ыңғайлы өлшем */
-            height: 160px;
-            margin-bottom: 25px; /* Мәтінмен арасы */
+            width: 180px;
+            height: 180px;
+            margin-bottom: 25px;
+            position: relative;
         }
 
         .main-logo {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Фотоны қисайтпай толтырады */
+            object-fit: cover; /* Фото созылып кетпеуі үшін */
             border-radius: 50%;
-            border: 3px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            background-color: #000;
+            border: 4px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
         }
 
         .glitter-text {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .subtitle {
             color: var(--gold);
-            font-size: 0.85rem;
-            margin-top: 8px;
+            font-size: 0.9rem;
+            margin-top: 10px;
             letter-spacing: 2px;
-            opacity: 0.9;
+            font-weight: 600;
         }
 
-        /* Прайс Бөлімі */
+        /* ПРАЙС БӨЛІМІ */
         .container {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            padding: 15px;
+            padding: 20px 15px;
         }
 
         .price-card {
             background: var(--card-bg);
-            margin-bottom: 10px;
-            padding: 16px 20px;
-            border-radius: 14px;
+            margin-bottom: 12px;
+            padding: 18px;
+            border-radius: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -86,66 +88,60 @@
             transition: 0.3s;
         }
 
-        /* Телефонда басқанда сәл кішірейетін эффект */
-        .price-card:active {
-            transform: scale(0.97);
+        .price-card:hover {
             border-color: var(--gold);
+            transform: translateY(-2px);
         }
 
         .service-info { display: flex; align-items: center; gap: 12px; }
-        .service-info i { color: var(--gold); font-size: 1.1rem; }
-        .service-name { font-size: 0.95rem; color: #eee; }
-        .service-price { color: var(--gold); font-weight: 700; font-size: 1rem; }
+        .service-info i { color: var(--gold); font-size: 1.2rem; }
+        .service-name { font-size: 1rem; color: #ddd; }
+        .service-price { color: var(--gold); font-weight: 700; }
 
-        /* Батырмалар */
+        /* БАТЫРМАЛАР */
         .btns-group {
             display: grid;
-            gap: 12px;
-            margin-top: 25px;
-            padding-bottom: 40px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .btn {
-            padding: 16px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 15px;
             text-decoration: none;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 1rem;
         }
 
         .btn-wa { background: #25D366; color: white; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
 
-        /* WhatsApp Floating */
+        /* WHATSAPP FLOAT */
         .wa-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background: #25D366;
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 30px;
             color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
-
-        footer { text-align: center; padding: 20px; color: #333; font-size: 0.7rem; }
     </style>
 </head>
 <body>
 
     <header class="header-section">
         <div class="logo-container">
-            <img src="11.jpeg" alt="Arai Consulting" class="main-logo" onerror="11.jpeg">
+            <img src="11.jpeg" alt="Arai Consulting" class="main-11" onerror="this.src='https://i.ibb.co/Xz9kH0h/image.png'">
         </div>
         <h1 class="glitter-text">Arai Consulting</h1>
         <p class="subtitle">МЕН АРЕСТТЕРДІ ШЕШЕМІН</p>
@@ -171,8 +167,6 @@
     </div>
 
     <a href="https://wa.me/77716574345" class="wa-float"><i class="fab fa-whatsapp"></i></a>
-
-    <footer>&copy; 2026 ARAI CONSULTING. Барлық құқықтар қорғалған.</footer>
 
 </body>
 </html>
